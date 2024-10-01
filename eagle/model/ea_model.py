@@ -121,6 +121,7 @@ class EaModel(nn.Module):
             if not os.path.exists(load_model_path):
                 load_model_path = hf_hub_download(ea_model_path, "model.safetensors")
             ea_layer_state_dict = load_file(load_model_path)
+            print(f"{load_model_path}........{ea_layer_state_dict}")
         model = cls(
             base_model,
             base_model_path,
@@ -131,6 +132,7 @@ class EaModel(nn.Module):
             threshold,
             ea_layer_state_dict
         )
+        print(f"{load_model_path}........{ea_layer_state_dict}")
 
 
 
